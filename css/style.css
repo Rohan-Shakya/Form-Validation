@@ -1,0 +1,240 @@
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(rgb(245,148,116), rgb(31,24,6));
+    font-family: sans-serif;
+}
+
+.container{
+    background-color: transparent;
+    width: 80%;
+    height: 80vh;
+    border-radius: 10px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 5px rgba(0,0,0,0.3);
+    text-align: center;
+    max-width: 700px;
+}
+.container::before{
+    content: '';
+    height: 1px;
+    width: 80%;
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    left: 10%;
+}
+.circle{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgb(255, 255, 255);
+    top: 30px;
+    left: 10%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+
+}
+.circle:nth-child(2){
+    position: absolute;
+    
+    background-color: rgba(194, 180, 180, 0.912);
+    top: 30px;
+    left: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+.circle:nth-child(3){
+    position: absolute;
+    
+    background-color: rgba(194, 180, 180, 0.912);
+    top: 30px;
+    left: 90%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+.header{
+    padding: 80px 0 10px 0;
+}
+.header h1{
+    color: rgba(255, 255, 255, 0.714);
+    letter-spacing: 3px;
+    text-shadow: 2px 2px rgb(194, 100, 29);
+    font-size: 28px;
+}
+.input-field{
+    margin: 50px auto;
+    position: relative;
+    height: 50px;
+    width: 80%;
+}
+
+.input-field input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.306);
+    font-size: 20px;
+    transition: .4s;
+    padding-left: 15px;
+    background-color: transparent;
+    border-radius: 20px;
+    color: silver;
+}
+input:focus{
+   box-shadow: 0 0 3px 2px rgba(0,0,0,0.3);
+}
+.input-field label{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+.input-field label{
+    left: 15px;
+    pointer-events: none;
+    color: rgba(255, 255, 255, 0.435);
+    font-size: 18px;
+    transition: .4s;
+}
+input:focus ~ label,
+input:valid ~ label{
+    transform: translateY(-53px);
+    background-color: transparent;
+    font-size: 18px;
+    color: white;
+    letter-spacing: 1px;
+}
+.button{
+    width: 80%;
+    height: 40px;
+    margin: 0 auto;
+}
+button{
+    width: 80%;
+    margin: 0 auto;
+    height: 40px;
+    border-radius: 20px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid silver;
+    font-size: 20px;
+    color: silver;
+    transition: .5s;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+button:hover{
+    background-color: rgba(125, 79, 57, 0.796);
+}
+h4{
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: rgba(177, 169, 169, 0.81);
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+h4:hover{
+    text-decoration: underline;
+}
+input.valid{
+    border-color: #36cc36;
+}
+
+input.invalid{
+    border-color: rgb(255, 0, 0);
+}
+
+input.invalid + label + p{
+    opacity: 1;
+    height: auto;
+}
+
+input + label + p{
+    opacity: 0;
+    font-size: 14px;
+    margin: 5px;
+    color: white;
+    height: 0;
+}
+
+@media (max-width : 500px){
+    .container{
+        width: 90%;
+        height: 90vh;
+    }
+    .input-field{
+        margin: 70px auto;
+        width: 85%;
+    }
+    h4{
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media (max-width: 400px){
+    form{
+        margin-top: -30px;
+    }
+    .input-field{
+        height: 40px;
+    }
+    .button{
+        margin-top: -15px;
+    }
+    h4{
+        font-size: 13px;
+    }
+    input:focus ~ label,
+    input:valid ~ label{
+        transform: translateY(-45px);
+        background-color: transparent;
+        font-size: 18px;
+        color: white;
+        letter-spacing: 1px;
+    }
+    .input-field input{
+        font-size: 18px;
+    }
+
+}
+@media (max-width: 330px){
+    form{
+        margin-top: -50px;
+    }
+    .input-field{
+        height: 35px;
+
+    }
+    input:focus ~ label,
+    input:valid ~ label{
+        transform: translateY(-38px);
+        background-color: transparent;
+        font-size: 18px;
+        color: white;
+        letter-spacing: 1px;
+    }
+    button{
+        height: 30px;
+        letter-spacing: 2px;
+        font-size: 16px;
+    }
+    h4{
+        bottom: 20px;
+    }
+}
+
